@@ -1,11 +1,9 @@
-# ToonShaderBalls
-
-# ColorShaderBalls by Fabián Alfonso Beirutti Pérez
-Color shader balls sketch using GLSL on processing.
+# ToonShaderBalls by Fabián Alfonso Beirutti Pérez
+Toon shader balls sketch using GLSL on processing.
 
 ## Introducción
 El objetivo de esta práctica de la asignatura de 4to, Creación de Interfaces de Usuario (CIU), es empezar a tratar los conceptos y las primitivas del tratamiento de sombras o *shaders*. Para ello, se ha pedido el desarrollo de una aplicación que haga uso de un *shader* de fragmentos, sugiriendo un diseño generativo o realice un algún procesamiento sobre imagen. Todo ello, usando el lenguaje de programación y el IDE llamado Processing. Este permite desarrollar código en diferentes lenguajes y/o modos, como puede ser processing (basado en Java), p5.js (librería de JavaScript), Python, entre otros.
-<p align="center"><img src="/colorShaderBallsGif.gif" alt="Color shader balls sketch using GLSL on processing"></img></p>
+<p align="center"><img src="/toonShaderBallsGif.gif" alt="Toon shader balls sketch using GLSL on processing"></img></p>
 
 ## Controles
 Los controles de la aplicación se mostrarán en todo momento por pantalla para facilitar su uso al usuario:
@@ -18,12 +16,12 @@ Los controles de la aplicación se mostrarán en todo momento por pantalla para 
 
 ## Descripción
 Aprovechando que el lenguaje de programación que utiliza el IDE Processing por defecto está basado en Java, podemos desarrollar nuestro código utilizando el paradigma de programación de "Programación Orientada a Objetos". Así pues, hemos descrito tres clases de Java:
-- **ColorShaderBalls:** clase principal.
+- **ToonShaderBalls:** clase principal.
 - **Ball:** clase que representa cada una de las bolas de color.
 - **shaderBall.glsl:** fichero o clase que describe e implementa los efectos del *shader* sobre cada una de las bolas.
 
 ## Explicación
-### Clase ColorShaderBalls
+### Clase ToonShaderBalls
 Esta es la clase principal de la aplicación, la cual gestiona la información mostrada por pantalla al usuario (interfaz gráfica), esto es, el desarrollo de los métodos setup() y draw().
 ```java
 void setup() {
@@ -124,7 +122,7 @@ pixelColor += vec4(color_Ball_One.x, color_Ball_One.y, color_Ball_One.z, 1.0) * 
 ```
 
 ## Descarga y prueba
-Para poder probar correctamente el código, descargar los ficheros (el .zip del repositorio) y en la carpeta llamada ColorShaderBalls se encuentran los archivos de la aplicación listos para probar y ejecutar. El archivo "README.md" y aquellos fuera de la carpeta del proyecto (ColorShaderBalls), son opcionales, si se descargan no deberían influir en el funcionamiento del código ya que, son usados para darle formato a la presentación y explicación del repositorio en la plataforma GitHub.
+Para poder probar correctamente el código, descargar los ficheros (el .zip del repositorio) y en la carpeta llamada ToonShaderBalls se encuentran los archivos de la aplicación listos para probar y ejecutar. El archivo "README.md" y aquellos fuera de la carpeta del proyecto (ToonShaderBalls), son opcionales, si se descargan no deberían influir en el funcionamiento del código ya que, son usados para darle formato a la presentación y explicación del repositorio en la plataforma GitHub.
 
 Adicionalmente, dado que se ha usado una librería adicional en esta práctica, para probarla será necesario:
 - Añadir e importar la librería *controlP5* en Processing.
