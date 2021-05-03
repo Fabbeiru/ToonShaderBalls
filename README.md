@@ -135,4 +135,4 @@ Para la realización de este sistema planetario en 3D, se han consultado y/o uti
 
 Por otro lado, las librerías empleadas fueron:
 * <a href="https://github.com/extrapixel/gif-animation">GifAnimation</a> de Patrick Meister.
-* controlP5 de Andreas Schlegel.
+* <a href="http://www.sojamo.de/libraries/controlP5/">controlP5</a> de Andreas Schlegel.
