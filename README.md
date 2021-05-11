@@ -9,6 +9,8 @@ El objetivo de esta práctica de la asignatura de 4to, Creación de Interfaces d
 Los controles de la aplicación se mostrarán en todo momento por pantalla para facilitar su uso al usuario:
 - **Movimiento del ratón arriba-abajo:** Varía la distancia entre los píxels.
 - **Movimiento del ratón derecha-izquierda:** Varía la intensidad de la luz.
+- **Click izquierdo del ratón:** Activa el nuevo efecto de los *shaders* en cada bola.
+- **Círculo selector de color #1:** Aplica el color seleccionado al efecto del *shader* que se produce al hacer click izquierdo con el ratón.
 - **Tecla B:** Bloque el control del ratón (mantiene los últimos valores constantes).
 - **Tecla C:** Cambia las bolas de posición.
 - **Tecla H:** Muestra / esconde los selectores de color de las bolas.
