@@ -10,7 +10,7 @@ Los controles de la aplicación se mostrarán en todo momento por pantalla para 
 - **Movimiento del ratón arriba-abajo:** Varía la distancia entre los píxels.
 - **Movimiento del ratón derecha-izquierda:** Varía la intensidad de la luz.
 - **Click izquierdo del ratón:** Activa el nuevo efecto de los *shaders* en cada bola.
-- **Círculo selector de color #1:** Aplica el color seleccionado al efecto del *shader* que se produce al hacer click izquierdo con el ratón.
+- **Rueda selector de color #1:** Aplica el color seleccionado al efecto del *shader* que se produce al hacer click izquierdo con el ratón.
 - **Tecla B:** Bloque el control del ratón (mantiene los últimos valores constantes).
 - **Tecla C:** Cambia las bolas de posición.
 - **Tecla H:** Muestra / esconde los selectores de color de las bolas.
@@ -121,6 +121,38 @@ En esta clase o fichero se describe e implementa la funcionalidad de los *shader
 ```java
 distance = size / sqrt(pow((position.x - location_Ball_One.x)*aspectRatio, 2) + pow(position.y - location_Ball_One.y, 2));
 pixelColor += vec4(color_Ball_One.x, color_Ball_One.y, color_Ball_One.z, 1.0) * distance;
+```
+
+### Clases o ficheros ToonVert.glsl y ToonFrag.glsl
+En la clase o fichero *ToonVert.glsl* se almacenan los parámetros necesarios del objeto sobre el que se desee aplicar un shader para luego, aplicar el efecto correspondiente descrito en *ToonFrag.glsl*.
+```C
+void main() {
+  vec4 newPosition = position + vec4(normal, 1.0) * random(vec2(time))*5;
+  gl_Position = transform * newPosition;
+  vertColor = color;
+  vertNormal = normalize(normalMatrix * normal);
+  vertLightDir = -lightNormal;
+}
+```
+El fragmento anterior pertenece a *ToonVert.glsl*, y como se puede ver, se almacenan la posición del objeto, la dirección de la luz, el color, entre otros parámetros correspondientes al objeto sobre el que se aplicará el efecto del shader descrito en *ToonFrag.glsl*:
+```C
+void main() {
+  float intensity;
+  vec4 color;
+  intensity = max(0.0, dot(vertLightDir, vertNormal));
+
+  if (intensity > pow(0.95, fraction)) {
+    color = vec4(vec3(1.0), 1.0);
+  } else if (intensity > pow(0.5, fraction)) {
+    color = vec4(vec3(0.6), 1.0);
+  } else if (intensity > pow(0.25, fraction)) {
+    color = vec4(vec3(0.4), 1.0);
+  } else {
+    color = vec4(vec3(0.2), 1.0);
+  }
+  
+  gl_FragColor = color * vertColor;
+}
 ```
 
 ## Descarga y prueba
